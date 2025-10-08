@@ -23,6 +23,11 @@ error() {
     exit 1
 }
 
+# Проверка, установлены ли шрифты
+is_font_installed() {
+    fc-list | grep -q "FiraCode Nerd Font" 2>/dev/null
+}
+
 # Определяем ОС
 if [ -f /etc/os-release ]; then
     . /etc/os-release
@@ -36,15 +41,15 @@ fi
 install_deps_debian() {
     log "Установка зависимостей для Debian/Ubuntu..."
     sudo apt update
-    sudo apt install -y wget fontconfig
+    sudo apt install -y wget fontconfig unzip
 }
 
 install_deps_redhat() {
     log "Установка зависимостей для RHEL/Fedora..."
     if command -v dnf &> /dev/null; then
-        sudo dnf install -y wget fontconfig
+        sudo dnf install -y wget fontconfig unzip
     elif command -v yum &> /dev/null; then
-        sudo yum install -y wget fontconfig
+        sudo yum install -y wget fontconfig unzip
     else
         error "Не найден пакетный менеджер (dnf/yum)"
     fi
@@ -55,13 +60,18 @@ install_fonts() {
     local FONT_DIR="/usr/local/share/fonts/nerd-fonts"
     local TMP_DIR="/tmp/firacode-nerd-fonts"
 
+    # Проверка, установлены ли уже шрифты
+    if is_font_installed; then
+        success "FiraCode Nerd Font уже установлен!"
+        return 0
+    fi
+
     log "Создание директорий..."
     sudo mkdir -p "$FONT_DIR"
     mkdir -p "$TMP_DIR"
 
     log "Скачивание FiraCode Nerd Font..."
     cd "$TMP_DIR"
-    # Используем последнюю версию с GitHub Releases
     wget -q --show-progress -O firacode.zip \
         https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip \
         || error "Не удалось скачать шрифты"
