@@ -158,7 +158,7 @@ l='ls -CF'      # Компактный список
    - **Alacritty**: В `alacritty.yml` укажите `family: FiraCode Nerd Font`
    - **Windows Terminal**: Настройки → Профиль → Шрифт → `FiraCode Nerd Font`
 
-5. **Перезапустите терминал**
+5. **Перезапустите терминал 'source ~/.zshrc'**
 ---
 
 
