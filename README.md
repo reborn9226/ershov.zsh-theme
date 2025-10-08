@@ -14,15 +14,17 @@
 - Установленный **Zsh** и **Oh My Zsh**
 - Доступ к `sudo` (для установки шрифтов и системных плагинов)
 
-### 1. Установите шрифты (обязательно!)
+### 1. Установите шрифты  install-nerdfonts (обязательно!), Установите тему и плагины
 ```bash
 git clone https://github.com/reborn9226/ershov.zsh-theme.git
 cd ershov.zsh-theme
+chmod +x install-nerdfonts.sh
 ./install-nerdfonts.sh
 ```
 
 ### 2. Установите тему и плагины
 ```bash
+chmod +x install-ershov.sh
 ./install-ershov.sh
 ```
 
@@ -139,6 +141,7 @@ l='ls -CF'      # Компактный список
    ```bash
    git clone https://github.com/reborn9226/ershov.zsh-theme.git
    cd ershov.zsh-theme
+   chmod +x install-nerdfonts.sh
    ./install-nerdfonts.sh
    ```
    - Поддерживает **Debian/Ubuntu, RHEL/Fedora, Alma, Rocky**
@@ -146,6 +149,7 @@ l='ls -CF'      # Компактный список
 
 2. **Установите тему**:
    ```bash
+   chmod +x install-ershov.sh
    ./install-ershov.sh
    ```
    - Копирует `ershov.zsh-theme` в `~/.oh-my-zsh/custom/themes/`
