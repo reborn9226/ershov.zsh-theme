@@ -152,7 +152,7 @@ l='ls -CF'      # Компактный список
    ZSH_THEME="ershov"
    plugins=(zsh-autosuggestions zsh-syntax-highlighting)
    ```
-4. **Выберите шрифт в терминале**:
+4. **Выберите шрифт в терминале если работаете не по ssh**:
    - **GNOME Terminal**: Правка → Профиль → Шрифт → `FiraCode Nerd Font Mono`
    - **Kitty**: В `kitty.conf` добавьте `font_family      FiraCode Nerd Font`
    - **Alacritty**: В `alacritty.yml` укажите `family: FiraCode Nerd Font`
