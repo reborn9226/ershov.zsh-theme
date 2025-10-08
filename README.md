@@ -27,7 +27,7 @@ cd ershov.zsh-theme
 ```bash
 # Убедитесь, что в ~/.zshrc есть:
 ZSH_THEME="ershov"
-plugins=(zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
 > 💡 **Готово!** Перезапустите терминал.
