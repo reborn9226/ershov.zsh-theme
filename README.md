@@ -30,7 +30,7 @@ ZSH_THEME="ershov"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
-> 💡 **Готово!** Перезапустите терминал.
+> 💡 **Готово!** Перезапустите терминал source ~/.zshrc 
 
 ---
 
