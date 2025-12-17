@@ -50,6 +50,9 @@ install_deps_redhat() {
         sudo dnf install -y wget fontconfig unzip
     elif command -v yum &> /dev/null; then
         sudo yum install -y wget fontconfig unzip
+        #Добавил altlinux
+    elif command -v apt-get &> /dev/null; then 
+          sudo apt-get install -y wget fontconfig unzip
     else
         error "Не найден пакетный менеджер (dnf/yum)"
     fi
@@ -104,7 +107,7 @@ main() {
 
     if [[ "$OS" == "debian" || "$OS" == "ubuntu" || "$OS_LIKE" == *"debian"* ]]; then
         install_deps_debian
-    elif [[ "$OS" == "fedora" || "$OS" == "rhel" || "$OS" == "centos" || "$OS" == "almalinux" || "$OS" == "rocky" || "$OS_LIKE" == *"rhel"* ]]; then
+    elif [[ "$OS" == "fedora" || "$OS" == "altlinux" || "$OS" == "rhel" || "$OS" == "centos" || "$OS" == "almalinux" || "$OS" == "rocky" || "$OS_LIKE" == *"rhel"* ]]; then #Добавил поддержку альтлинукс
         install_deps_redhat
     else
         error "Неподдерживаемый дистрибутив: $OS"
