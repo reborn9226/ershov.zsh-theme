@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Универсальный установщик FiraCode Nerd Font
-# Поддержка: Debian/Ubuntu, RHEL/Fedora/Alma/Rocky
-
+# Поддержка: Debian/Ubuntu, RHEL/Fedora/Alma/Rocky/RedOS/AltLinux
 set -e  # Завершить при ошибке
 
 RED='\033[0;31m'
