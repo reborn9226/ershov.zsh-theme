@@ -8,7 +8,12 @@
 > ✨ **Особенность**: установка в два шага и мощная навигация по путям!
 
 ---
+## Предварительно нужно установить Oh My ZSH
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
+---
 ## 🚀 Быстрая установка
 ### Требования
 - Установленный **Zsh** и **Oh My Zsh**
